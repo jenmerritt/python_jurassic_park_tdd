@@ -11,6 +11,7 @@ John Hammond has tasked you with creating an app to help him manage his theme pa
 Use TDD and the following requirements about each Class:
 
 *MVP*
+
 A dinosaur must have:
 
 - A species
@@ -22,7 +23,8 @@ A park must have:
 - A name
 - A ticket price
 - A collection of dinosaurs
-- A park must be able to:
+
+A park must be able to:
 
 - Add a dinosaur to its collection of dinosaurs
 - Remove a dinosaur from its collection of dinosaurs
