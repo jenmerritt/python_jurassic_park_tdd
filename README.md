@@ -33,6 +33,7 @@ A park must have:
 - Calculate the total revenue from ticket sales for one year
 
 *Extensions*
+
 A park must be able to:
 
 - Remove all dinosaurs of a particular species
