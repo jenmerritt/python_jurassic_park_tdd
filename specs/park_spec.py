@@ -91,6 +91,33 @@ class TestPark(unittest.TestCase):
         self.assertEqual(0, len(self.park.get_dinosaurs_by_species("Brontosaurus")))
         self.assertEqual(1, len(self.park.get_dinosaurs_by_species("Pterosaur")))
 
+    def test_can_get_dinosaurs_by_diet(self):
+        self.pterosaur = Dinosaur("Pterosaur", "Carnivore", 200)
+        self.park.add_dinosaur(self.pterosaur)
+        self.assertEqual([self.pterosaur], self.park.get_dinosaurs_by_diet("Carnivore"))
+    
+    def test_can_get_number_of_dinosaurs_by_diet(self):
+        self.pterosaur = Dinosaur("Pterosaur", "Carnivore", 200)
+        self.park.add_dinosaur(self.pterosaur)
+        self.assertEqual(1, self.park.get_number_of_a_diet_type("Carnivore"))
+
+
+    def test_can_provide_snapshot_of_diet_data(self):
+        self.pterosaur = Dinosaur("Pterosaur", "Carnivore", 200)
+        self.raptor1 = Dinosaur("Raptor", "Omnivore", 300)
+        self.raptor2 = Dinosaur("Raptor", "Omnivore", 350)
+        self.raptor3 = Dinosaur("Raptor", "Omnivore", 290)
+        self.bronty = Dinosaur("Brontosaurus", "Herbivore", 250)
+        self.bronty = Dinosaur("Brontosaurus", "Herbivore", 250)
+        self.park.add_dinosaur(self.pterosaur)
+        self.park.add_dinosaur(self.bronty)
+        self.park.add_dinosaur(self.bronty)
+        self.park.add_dinosaur(self.raptor1)
+        self.park.add_dinosaur(self.raptor2)
+        self.park.add_dinosaur(self.raptor3) 
+        snapshot = self.park.get_snapshot_of_diet_data("01/01/2020")
+        self.assertEqual(Diet_Data(date="01/01/2020", carnivore=1, herbivore=2, omnivore=3), snapshot)
+
 
 if __name__ == "__main__":
     unittest.main() 

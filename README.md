@@ -39,5 +39,5 @@ A park must be able to:
 A park must be able to:
 
 - Remove all dinosaurs of a particular species
-- Provide an object containing each of the diet types and the number of dinosaurs in the park of that diet type
-    Example: { 'carnivore': 5, 'herbivore': 2, 'omnivore': 1 }
+- Provide a solution to capture data containing each of the diet types and the number of dinosaurs in the park of that diet type:
+    Example from JavaScript: { 'carnivore': 5, 'herbivore': 2, 'omnivore': 1 }
